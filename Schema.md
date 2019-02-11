@@ -27,9 +27,6 @@ column name     | data type | details
 id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key
 
-
-*questions have many answers*
-
 ## Pins
 column name     | data type | details
 ----------------|-----------|-----------------------
@@ -37,12 +34,12 @@ id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key
 board_id        | integer   | not null, foreign key
 
-*answers belong to questions, users*
 
 ## Tags
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
+
 
 ## Taggings
 column name     | data type | details
