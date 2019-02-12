@@ -17,27 +17,33 @@
   * Get single existing user profile
 * `PATCH /api/users/:userId`
   * Update user profile 
+* `Delete /api/users/:userId`
+  * Delete user profile 
 
 ### Boards
-* `GET /api/board`
-  * board search
-* `POST /api/board`
-  * Create new board
-* `GET /api/board/:boardId`
-  * Get single existing board
-* `PATCH /api/board/:boardId`
-  * Update board  
-* `DELETE /api/board/:boardId`
-  * Delete board  
+* `GET /api/boards`
+  * boards search
+* `POST /api/boards`
+  * Create new boards
+* `GET /api/boards/:boardId`
+  * Get single existing boards
+* `GET /api/boards/users/:boardId`
+  * Get single existing boards for user 
+* `PATCH /api/boards/:boardId`
+  * Update boards  
+* `DELETE /api/boards/:boardId`
+  * Delete boards  
 
 ### Pins
-* `GET /api/pin`
-  * pin index/search
-* `POST /api/pin`
-  * Creates new pin
-* `GET /api/pin/:pinId`
-  * Get single existing pin 
-* `PATCH /api/pin/:pinId`
-  * Update pin  
-* `DELETE /api/pin/:pinId`
-  * Delete pin  
+* `GET /api/pins`
+  * pins index/search
+* `POST /api/pins`
+  * Creates new pins
+* `GET /api/pins/:pinId`
+  * Get single existing pins 
+* `GET /api/users/board/pins/:pinId`
+  * Get pins inside board 
+* `PATCH /api/pins/:pinId`
+  * Update pins  
+* `DELETE /api/pins/:pinId`
+  * Delete pins  

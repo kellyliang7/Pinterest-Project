@@ -12,16 +12,16 @@
 * Messages
 * Notifcations
 
-**Userpage**
-* Nav Bar 
-* Create board
-* Create pin
-* Edit profile
-* Share profule 
-* User followers & following
-* User followers
-* Display Boards
-* Display Pins 
+**Profile**
+* Profile Info (username, profile picture)
+* Boards 
+* Pins 
+
+**Boards**
+* Pins that belong to a specific board
+
+**Pins**
+* Shows all pins 
 
 
 

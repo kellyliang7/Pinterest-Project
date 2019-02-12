@@ -17,15 +17,10 @@ country         | string    | not null
 column name     | data type | details
 ----------------|-----------|-----------------------
 user_id         | integer   | not null, foreign key
+url             | string    | not null, foreign key
 
 
 *Boards belong to a user*
-
-## Posts
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-user_id         | integer   | not null, foreign key
 
 ## Pins
 column name     | data type | details
@@ -33,6 +28,7 @@ column name     | data type | details
 id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key
 board_id        | integer   | not null, foreign key
+url             | string    | not null, foreign key
 
 
 ## Tags
