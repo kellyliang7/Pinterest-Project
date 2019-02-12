@@ -2,26 +2,24 @@
 
 **Homepage**
 * Nav Bar
+    * Search bar
+    * Home 
+    * Profile 
 * Pins feed
+    * Pin item
 
-**NavBar**
-* Search bar
-* Home 
-* Following
-* Profile 
-* Messages
-* Notifcations
+**User Profile**
+    * Profile Info
+        * Profile actions (create board, Create pin)
+        * Edit profile
+        * Share profile
+    * Boards List 
+        * Board List item
+            * Pins that belong to specific board  
+    * Pins List
+        * Pin item 
 
-**Profile**
-* Profile Info (username, profile picture)
-* Boards 
-* Pins 
 
-**Boards**
-* Pins that belong to a specific board
-
-**Pins**
-* Shows all pins 
 
 
 

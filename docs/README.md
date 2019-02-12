@@ -11,4 +11,4 @@ Funterest, a clone of Pinterest, built using React, Redux and Express. By the en
 ## Phase 1: Backend setup and Frontend User Authentication (2 days)
 * **Objective:** Functioning express project with frontend authentication 
 
-## Phase 2: User 
+## Phase 2: 
