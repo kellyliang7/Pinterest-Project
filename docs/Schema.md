@@ -11,7 +11,7 @@ gender          | string    | not null
 language        | string    | not null
 country         | string    | not null
 
-*user has a profile, one board, many pins
+*user has a profile, many boards, many pins
 
 ## Boards
 column name     | data type | details
