@@ -18,7 +18,7 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 user_id         | integer   | not null, foreign key
 description     | string    | not null, foreign key
-title           | string    | not null 
+name            | string    | not null 
 
 
 *Boards belong to a user*
@@ -29,7 +29,7 @@ column name     | data type | details
 id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key
 board_id        | integer   | not null, foreign key
-title           | string    | not null 
+description     | string    | not null 
 
 
 ## Tags

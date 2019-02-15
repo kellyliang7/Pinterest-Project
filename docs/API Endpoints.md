@@ -41,7 +41,7 @@
   * Creates new pins
 * `GET /api/pins/:pinId`
   * Get single existing pins 
-* `GET /api/users/board/pins/:pinId`
+* `GET /api/boards/boardId/pins`
   * Get pins inside board 
 * `PATCH /api/pins/:pinId`
   * Update pins  

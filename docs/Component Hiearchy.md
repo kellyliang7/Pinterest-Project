@@ -9,8 +9,8 @@
     * Pin item
 
 **User Profile**
-    * Profile Info
-        * Profile actions (create board, Create pin)
+* Profile Info
+    * Profile actions (create board, create pin)
         * Edit profile
         * Share profile
     * Boards List 
