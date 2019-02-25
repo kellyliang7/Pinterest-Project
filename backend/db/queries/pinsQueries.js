@@ -4,10 +4,10 @@ const {
 
 const getAllPins = (req, res, next) => {
   db.any("SELECT * FROM pins")
-    .then(data => {
+    .then(pins => {
       res.status(200).json({
         status: "Success",
-        data: data,
+        pins,
         message: "Received all pins"
       });
     })
