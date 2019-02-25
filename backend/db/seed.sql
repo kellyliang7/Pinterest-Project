@@ -10,11 +10,11 @@ DROP TABLE IF EXISTS pins;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     email VARCHAR NOT NULL UNIQUE,
-    username VARCHAR NOT NULL UNIQUE,
-    password_digest VARCHAR NOT NULL UNIQUE, 
+    username VARCHAR,
+    password_digest VARCHAR NOT NULL, 
     age INT,
     gender VARCHAR,
-    country VARCHAR;
+    country VARCHAR
 );
 
 CREATE TABLE boards (
@@ -22,7 +22,7 @@ CREATE TABLE boards (
     users_id INT REFERENCES users(id), 
     description VARCHAR NOT NULL,
     title VARCHAR NOT NULL,
-    category VARCHAR NOT NULL;
+    category VARCHAR NOT NULL
 );
 
 CREATE TABLE pins (
@@ -30,7 +30,7 @@ CREATE TABLE pins (
     users_id INT REFERENCES users(id),
     boards_id INT REFERENCES boards(id),
     description VARCHAR NOT NULL,
-    image_url VARCHAR NOT NULL;
+    image_url VARCHAR NOT NULL
 );
 
 INSERT INTO users (email, username, password_digest, age, gender, country)
