@@ -7,8 +7,13 @@ export const receivePins = (pins) => {
 };
 
 export const fetchAllPins = () => dispatch => { //asynchronous call from utils 
+    // debugger
     return pinsUtil.fetchAllPins()
     .then(res => {
-        return dispatch(receivePins(res.data))
+        // debugger
+        return dispatch(receivePins(res.data.pins))
+    })
+    .catch(err => {
+        // debugger 
     })
 }

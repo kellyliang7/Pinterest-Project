@@ -1,4 +1,5 @@
 import pinsReducer from "./pinsReducer";
 import { combineReducers } from "redux";
 
-export default combineReducers({ pinsReducer});
+export default combineReducers({
+    pins: pinsReducer});

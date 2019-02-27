@@ -1,0 +1,17 @@
+body {
+  display: flex;
+}
+
+.pins-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.pins-images {
+  width: 200px;
+  height: auto;
+  display: flex;
+  
+}
+
