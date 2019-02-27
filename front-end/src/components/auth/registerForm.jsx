@@ -7,7 +7,7 @@ class RegisterForm extends React.Component {
     email: "",
     password: "",
     age: "",
-    submitted: false
+    // submitted: false
   };
 
   handleChange = e => {
@@ -17,11 +17,19 @@ class RegisterForm extends React.Component {
   };
 
   handleSubmit = e => {
+    console.log("clicked")
     e.preventDefault();
-    this.setState({ submitted: true })
+    // this.setState({ submitted: true })
+    let registerUser = {
+      email: this.state.email,
+      password: this.state.password,
+      age: this.state.age
+    }
+    this.props.loginUser(registerUser)
   }
 
   render(){
+    console.log(this.props)
     const { email, password, age } = this.state 
     return (
       <React.Fragment>
@@ -32,7 +40,7 @@ class RegisterForm extends React.Component {
             Access Pinterest's best ideas with a free account
           </p>
             <div className="form">
-              <form onSubmit>
+              <form onSubmit={this.handleSubmit}>
                 <div>
                   <input className="input-fields"
                     type="text" 

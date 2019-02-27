@@ -3,11 +3,11 @@ import React from 'react';
 
 const PinsListItem = (props) => {
   return (
-    <React.Fragment>
-      <div className="pins-images"> 
+    <div className="pins-images">
+      <div className="image"> 
          <img src={props.image_url}/> 
       </div>
-    </React.Fragment>
+    </div>
   )
 };
 
