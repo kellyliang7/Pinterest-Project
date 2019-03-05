@@ -6,6 +6,20 @@ const { db } = require('./index.js');
 
 const authHelpers = require("../../auth/helpers");
 
+const getAllUsers = (req, res, next) => {
+  db.any("SELECT * FROM users")
+    .then(users => {
+      res.status(200).json({
+        status: "Success",
+        users,
+        message: "Received all users"
+      });
+    })
+    .catch(err => {
+      return next(err);
+    });
+};
+
 const createUser = (req, res, next) => {
   const hash = authHelpers.createHash(req.body.password);
   req.body.age = parseInt(req.body.age);
@@ -26,28 +40,50 @@ const createUser = (req, res, next) => {
         message: err
       });
     });
-}
+};
 
 const logoutUser = (req, res, next) => {
   req.logout();
   res.status(200).send("log out success");
-}
+};
 
 const loginUser = (req, res) => {
+  console.log("USER, ", req.user)
   res.json(req.user);
-}
+};
 
 const isLoggedIn = (req, res) => {
   if (req.user) {
-    res.json({ username: req.user });
+    res.json({ email: req.user });
   } else {
-    res.json({ username: null });
+    res.json({ email: null });
   }
+};
+
+const getSingleUser = (req, res, next) => {
+  let usersId = parseInt(req.params.id);
+  db.one("SELECT * FROM users WHERE id=$1", usersId)
+    .then(data => {
+      res.status(200).json({
+        status: "Success",
+        data: data,
+        message: "Received one user"
+      });
+    })
+    .catch(err => {
+      return next(err);
+    });
+};
+
+const editUser = (req, res, next) => {
+  db.none("UPDATE users SET email ")
 }
 
 module.exports = {
-  createUser: createUser,
-  logoutUser: logoutUser,
-  loginUser: loginUser,
-  isLoggedIn: isLoggedIn
+  getAllUsers,
+  createUser,
+  logoutUser,
+  loginUser,
+  isLoggedIn,
+  getSingleUser
 };

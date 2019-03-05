@@ -9,11 +9,20 @@ var router = express.Router();
 const passport = require('../auth/local');
 const { loginRequired } = require('../auth/helpers')
 
-const { createUser, logoutUser, loginUser, isLoggedIn } = require("../db/queries/usersQueries");
+const {
+  getAllUsers, 
+  createUser, 
+  logoutUser, 
+  loginUser,
+  isLoggedIn, 
+  getSingleUser 
+} = require("../db/queries/usersQueries");
 
+router.get("/", getAllUsers);
 router.post("/new", createUser);
 router.post("/login", passport.authenticate("local", {}), loginUser);
 router.get("/isLoggedIn", isLoggedIn);
 router.post("/logout", loginRequired, logoutUser);
+router.get("/:id", getSingleUser);
 
 module.exports = router;

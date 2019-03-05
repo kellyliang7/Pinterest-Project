@@ -31,6 +31,21 @@ const getSinglePin = (req, res, next) => {
     });
 };
 
+const getUserPins = (req, res, next) => {
+  let userId = parseInt(req.params.id);
+  db.any("SELECT * FROM pins WHERE users_id=$1", userId)
+    .then(pins => {
+      res.status(200).json({
+        status: "Success",
+        pins,
+        message: "Received user's pins"
+      })
+    })
+    .catch(err => {
+      return next(err);
+    })
+}
+
 const createPin = (req, res, next) => {
   db
     .none(
@@ -86,6 +101,7 @@ const deletePin = (req, res, next) => {
 module.exports = {
   getAllPins,
   getSinglePin,
+  getUserPins,
   createPin,
   editPin,
   deletePin
