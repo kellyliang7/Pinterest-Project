@@ -4,7 +4,7 @@ import React from 'react';
 const PinsListItem = (props) => {
   return (
     <div className="pins-images">
-      <div className="image"> 
+      <div className="image-home"> 
          <img src={props.image_url}/> 
       </div>
     </div>

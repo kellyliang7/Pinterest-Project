@@ -23,6 +23,9 @@ export const loginUser = (user) => dispatch => {
     Auth.authenticateUser(res.data.email)
     return dispatch(receiveCurrentUser(res.data))
   })
+  .then(() => {
+    checkAuthenticateStatus(); 
+  })
   .catch(err => {
     Auth.deauthenticateUser() //doesn't take an argument 
   })
@@ -36,15 +39,15 @@ export const loginUser = (user) => dispatch => {
 // } 
 
 export const checkAuthenticateStatus = () => dispatch => {
-  axios.get("/users/isLoggedIn").then(user => {
-    if (user.data.username === Auth.getToken()) {
-      
+  axios.get("/api/users/isLoggedIn").then(user => {
+    // debugger
+    if (user.data.email === Auth.getToken()) {
       dispatch({
-        type: Auth.isUserAuthenticated(),
-        payload: Auth.getToken()
+        type: RECEIVE_CURRENT_USER,
+        payload: user
       });
     } else {
-      if (user.data.username) {
+      if (user.data.email) {
         this.logoutUser();
       } else {
         Auth.deauthenticateUser();
