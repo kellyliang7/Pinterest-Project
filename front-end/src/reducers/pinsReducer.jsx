@@ -1,26 +1,30 @@
 import { RECEIVE_PINS, RECEIVE_SINGLE_PIN } from "../actions/pinsAction"
 
 const normalizeData = (arr) => {
-    let output = {}
-    arr.forEach(pin => {
-        output[pin.id] = pin 
-    })
-    return output
+  let output = {}
+  arr.forEach(pin => {
+    output[pin.id] = pin
+  })
+  return output
 };
 
-let defaultState = {}; 
+let defaultState = { currentPin: {} };
 
 const pinsReducer = (state = defaultState, action) => {
-    switch (action.type) {
-        case RECEIVE_PINS:
-        // debugger
-            return normalizeData(action.payload)
-            break;
-        case RECEIVE_SINGLE_PIN:
-            
-        default: return state 
-            break;
-    }
+  switch (action.type) {
+    case RECEIVE_PINS:
+      // debugger
+      return {
+        ...state,
+        ...normalizeData(action.payload)
+      }
+    case RECEIVE_SINGLE_PIN:
+      return { 
+        ...state,
+        currentPin: action.payload 
+      }
+    default: return state
+  }
 }
 
 // {

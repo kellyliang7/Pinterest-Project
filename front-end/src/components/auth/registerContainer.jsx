@@ -1,13 +1,11 @@
 import { connect } from 'react-redux';
-import { loginUser, checkAuthenticateStatus }  from '../../actions/sessionAction';
+import { createUser, checkAuthenticateStatus }  from '../../actions/sessionAction';
 import RegisterForm from '../auth/registerForm';
 
-const mapStateToProps = () => {
-};
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    loginUser: (registerUser) => dispatch(loginUser(registerUser)),
+    createUser: (registerUser) => dispatch(createUser(registerUser)),
     verify: () => dispatch(checkAuthenticateStatus()),
   }
 }

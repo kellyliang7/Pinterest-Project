@@ -28,7 +28,7 @@ class RegisterForm extends React.Component {
       password: this.state.password,
       age: this.state.age
     }
-    this.props.loginUser(registerUser)
+    this.props.createUser(registerUser)
   }
 
   render(){

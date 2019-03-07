@@ -22,9 +22,8 @@ const getAllUsers = (req, res, next) => {
 
 const createUser = (req, res, next) => {
   const hash = authHelpers.createHash(req.body.password);
-  req.body.age = parseInt(req.body.age);
-
   req.body.age = req.body.age ? req.body.age : null 
+  req.body.age = parseInt(req.body.age);
 
   db.none(
     "INSERT INTO users (email, age, password_digest) VALUES (${email}, ${age}, ${password})", 

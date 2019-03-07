@@ -1,6 +1,6 @@
 import * as pinsUtil from "../utils/pinsUtil";
 
-export let RECEIVE_PINS = "RECEIVE_PINS" 
+export const RECEIVE_PINS = "RECEIVE_PINS" 
 
 export const receivePins = (pins) => {
   return { type: RECEIVE_PINS, payload: pins }
@@ -14,20 +14,25 @@ export const fetchAllPins = () => dispatch => { //asynchronous call from utils
       return dispatch(receivePins(res.data.pins))
     })
     .catch(err => {
+      console.log(err)
       // debugger 
     })
 }
 
 
-export let RECEIVE_SINGLE_PIN = "RECEIVE_SINGLE_PIN"
+export const RECEIVE_SINGLE_PIN = "RECEIVE_SINGLE_PIN"
 
 export const receiveSinglePin = (pin) => {
   return { type: RECEIVE_SINGLE_PIN, payload: pin }
 };
 
-export const fetchSinglePin = () => dispatch => {
-  return pinsUtil.fetchSinglePin()
+export const fetchSinglePin = (id) => dispatch => {
+  return pinsUtil.fetchSinglePin(id)
     .then(res => {
-      return dispatch(receiveSinglePin(res.data.data))
+      console.log(res)
+      return dispatch(receiveSinglePin(res.data.pin))
+    })
+    .catch(err => {
+      console.log(err)
     })
 }

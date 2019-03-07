@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 const PinsListItem = (props) => {
   return (
     <div className="pins-images">
-    <Link className='pinLink' to={ `/pin/${props.id}` }>
-      <div> 
-         <img className="image" src={props.image_url}/> 
-      </div>
+      <Link className='pinLink' to={ `/pin/${props.id}` }>
+        <div> 
+          <img className="image" alt="" src={props.image_url}/> 
+        </div>
       </Link>
     </div>
   )

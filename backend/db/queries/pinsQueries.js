@@ -19,10 +19,10 @@ const getAllPins = (req, res, next) => {
 const getSinglePin = (req, res, next) => {
   let pinsId = parseInt(req.params.id);
   db.one("SELECT * FROM pins WHERE id=$1", pinsId)
-    .then(data => {
+    .then(pin => {
       res.status(200).json({
         status: "Success",
-        data: data,
+        pin,
         message: "Received one pin"
       });
     })

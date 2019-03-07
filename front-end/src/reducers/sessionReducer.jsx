@@ -16,7 +16,6 @@ const sessionReducer = (state = defaultState, action) => {
                 email: Auth.getToken()
             }
         default: return state
-            break;
 
     }
 }

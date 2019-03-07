@@ -11,12 +11,18 @@ export const receiveCurrentUser = (user) => {
 export const createUser = (user) => dispatch => {
   return sessionUtil.createUser(user)
   .then(()=> {
+    debugger
     // return dispatch(receiveCurrentUser(null))
-    return loginUser(user)
+    return dispatch(loginUser(user))
+  })
+  .catch(err => {
+    debugger
+    console.log(err)
   })
 };
 
 export const loginUser = (user) => dispatch => {
+  debugger
   console.log("log in user")
   return sessionUtil.loginUser(user)
   .then(res => {
