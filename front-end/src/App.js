@@ -6,6 +6,7 @@ import PinsContainer from './components/pins/pinsContainer';
 // import RegisterForm from './components/auth/registerForm';
 import RegisterContainer from "./components/auth/registerContainer";
 import LoginForm from './components/auth/loginForm';
+import userContainer from '../src/components/user/userContainer';
 import {Navbar} from "../src/components/menu/navbar";
 
 
@@ -19,6 +20,8 @@ class App extends Component {
             <Route exact path="/"component={PinsContainer} />
             <Route exact path="/signup"component={RegisterContainer} />
             <Route exact path="/login"component={LoginForm} />
+            <Route exact path="/user"component={userContainer} />
+            {/* <Route exact path="/pin/:id" */}
           </Switch>
         </div>
       </BrowserRouter>

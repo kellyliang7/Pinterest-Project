@@ -1,4 +1,4 @@
-import { RECEIVE_PINS } from "../actions/pinsAction"
+import { RECEIVE_PINS, RECEIVE_SINGLE_PIN } from "../actions/pinsAction"
 
 const normalizeData = (arr) => {
     let output = {}
@@ -16,7 +16,8 @@ const pinsReducer = (state = defaultState, action) => {
         // debugger
             return normalizeData(action.payload)
             break;
-    
+        case RECEIVE_SINGLE_PIN:
+            
         default: return state 
             break;
     }

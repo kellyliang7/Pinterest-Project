@@ -1,5 +1,4 @@
-
-import axios from "axios"
+import axios from "axios";
 
 export const createUser = (user) => {
   return axios.post("/api/users/new", user)

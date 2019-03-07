@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import "../App.css";
 
 const PinsListItem = (props) => {
   return (
     <div className="pins-images">
-      <div className="image-home"> 
-         <img src={props.image_url}/> 
+    <Link className='pinLink' to={ `/pin/${props.id}` }>
+      <div> 
+         <img className="image" src={props.image_url}/> 
       </div>
+      </Link>
     </div>
   )
 };

@@ -3,6 +3,7 @@ nav {
   /* justify-content: space-around; */
   width: 1440px;
   height: 64px;
+  border-bottom: #efefef solid 1px;
 }
 
 .logo-container {
@@ -14,8 +15,9 @@ nav {
 }
 
 .logo {
-  height: 40px;
-  width: 40px;
+  /* height: 40px;
+  width: 40px; */
+  color:red;
 }
 
 .logo:hover{
@@ -29,7 +31,7 @@ nav {
   width: 870px;
   background-color: #efefef;
   align-self: center;
-  border-radius: 10px;
+  border-radius: 6px;
   display: flex;
  }
 
@@ -76,3 +78,24 @@ li {
   list-style: none;
 }
 
+.navlink {
+margin:13px; 
+font-weight: bold;
+text-decoration: none;
+color: #8e8e8e;
+}
+
+.icons{
+  margin-top: 23px;
+  color:  #8e8e8e;
+}
+
+.comments {
+  padding-right: 29px;
+  padding-left: 19px;
+}
+
+.bell {
+  padding-left: 7px;
+  padding-right: 29px;
+}

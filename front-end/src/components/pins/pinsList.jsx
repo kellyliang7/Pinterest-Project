@@ -12,9 +12,10 @@ class PinsList extends React.Component {
     // debugger 
     const { pins } = this.props; 
     let displayPins = pins.map(pin => {
-      return <PinsListItem key={pin.id} users_id={pin.users_id} boards_id={pin.boards_id} description={pin.description} image_url={pin.image_url}/>
+      return <PinsListItem key={pin.id} id={pin.id} users_id={pin.users_id} boards_id={pin.boards_id} description={pin.description} image_url={pin.image_url}/>
 
     })
+    // console.log(this.props)
     // debugger
     return(
       <div className="pins-grid">
